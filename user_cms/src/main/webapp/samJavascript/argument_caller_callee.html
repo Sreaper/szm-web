@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //链接地址
+        //http://blog.csdn.net/oscar999/article/details/8511335
+        function testArg()
+        {
+            alert("real parameter count: "+arguments.length);
+            for(var i = 0; i < arguments.length; i++)
+            {
+                alert(arguments[i]);
+            }
+        }
+
+
+        testArg(11);  //count: 1
+        testArg('hello','world');  // count: 2
+
+        function testCaller() {
+            var caller = testCaller.caller;
+            alert(caller);
+        }
+
+        function aCaller() {
+            testCaller();
+        }
+
+        function aCallee(arg) {
+            alert(arguments.callee);
+        }
+
+        function aCaller(arg1, arg2) {aCallee();}
+
+        aCaller();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
