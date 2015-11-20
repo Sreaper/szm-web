@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function sum(x, y) {
+            // 不推荐写法: 隐式全局变量
+            result = x + y;
+            return result;
+        }
+        var sss =  sum(2,3);
+        console.log(window.sss)
+        console.log(window.result)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
