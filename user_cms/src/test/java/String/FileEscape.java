@@ -47,6 +47,7 @@ public class FileEscape {
 
 	public static String readToString(String fileName) throws Exception {
 		String encoding = "ISO-8859-1";
+		System.out.println();
 		File file = new File(fileName);
 		Long filelength = file.length();
 		byte[] filecontent = new byte[filelength.intValue()];
