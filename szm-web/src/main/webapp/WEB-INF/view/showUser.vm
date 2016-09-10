@@ -1,0 +1,10 @@
+	<p>这是一个showUser界面 ${user.email}</p>	
+	<p>Title: ${user.email}</p>
+	<table>
+    <tr><td bgcolor="#CC00FF">${user.userId}</td></tr>
+    <tr><td bgcolor="#CC00FF">${user.userName}</td></tr>
+    <tr><td bgcolor="#CC00FF">${user.password}</td></tr>
+    <tr><td bgcolor="#CC00FF">${user.sex}</td></tr>
+    <tr><td bgcolor="#CC00FF">${user.email}</td></tr>
+	</table>
+	
