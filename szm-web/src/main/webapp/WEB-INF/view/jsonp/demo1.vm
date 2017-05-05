@@ -12,3 +12,4 @@
     document.getElementsByTagName('head')[0].appendChild(script);
     var test = "\"{\"name\":\"songzhimao\"}\"";
 </script>
+<div>szm</div>
