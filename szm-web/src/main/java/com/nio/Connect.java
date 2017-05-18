@@ -19,9 +19,9 @@ import java.net.UnknownHostException;
 public class Connect {
     private static final ThreadLocal<Socket> threadConnect = new ThreadLocal<Socket>();
 
-    private static final String HOST = "localhost";
+    private static final String HOST = "192.168.202.245";
 
-    private static final int PORT = 60000;
+    private static final int PORT = 6384;
 
     private static Socket client;
 
@@ -60,13 +60,13 @@ public class Connect {
                 System.out.println("=====================开始发送心跳包==============");
                 while (true) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                     System.out.println("发送心跳数据包");
-                    outStr.write("send heart beat data package !".getBytes());
+                    outStr.write("ping".getBytes());
                 }
             } catch (IOException e) {
                 e.printStackTrace();

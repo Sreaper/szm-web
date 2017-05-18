@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+</head>
+<script>
+    console.log("step2"+Person.prototype)
+    debugger;
+    function Person(name) {
+        console.log("step0");
+        this.name = name;
+    }
+
+    Person.prototype.getName = function () {
+        console.log("step1")
+        return name;
+    }
+
+    //new Person(name)
+</script>
+<body>
+
+</body>
+</html>
