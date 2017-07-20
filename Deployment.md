@@ -31,7 +31,9 @@ If so, we need to adjust their configuration information for broker and topic.
      {"alias":"jmq102_s","dataCenter":9,"id":3,"ip":"192.168.1.6","permission":"NONE","port":50088,"retryType":"DB","syncMode":"SYNCHRONOUS"}]
 
 #### Topic demonstration: ####
-     {"archive":false,"consumers":{"app4Consumer":{}},"groups":["jmq100","jmq102"],"importance":1,"producers":{"app4Product":{}},"queues":5,"topic":"topic_simple","type":"TOPIC"}
+     [{"archive":false,"consumers":{"app4Consumer":{}},"groups":["jmq100","jmq102"],"importance":1,"producers":{"app4Product":{}},"queues":5,"topic":"topic_simple","type":"TOPIC"}]
+
+Tips: When you update data, you need to compress it so that \s notation does not affect the correctness of the data
 
 Then you may be making appropriate changes and use the telnet command to update them.
 
