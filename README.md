@@ -1,12 +1,10 @@
 JMQ
 =================
-JMQ is distributed messaging and streaming data platform with low latency, 
+JMQ is distributed messaging and streaming data platform with low latency, high performance and reliability, trillion-level 
 
-high performance and reliability, trillion-level capacity and flexible scalability.
+capacity and flexible scalability.
 
-JD researched the JMQ independently, with all of its proprietary intellectual property
-
-and manufacturing technology.
+JD researched the JMQ independently, with all of its proprietary intellectual property and manufacturing technology.
 
 ### JMQ feature ###
 The following softwares are assumed installed:
