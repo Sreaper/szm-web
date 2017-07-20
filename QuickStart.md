@@ -53,7 +53,7 @@ Suppose the address of broker is 192.168.1.5
     >  topic set [{"archive":false,"consumers":{"app4Consumer":{}},"groups":["jmq102"],"importance":1,"producers":{"app4Product":{}},"queues":5,"topic":"topic_simple","type":"TOPIC"}]
     >  topic get 
     
-=================
+
     > broker set [{"alias":"jmq102_m","dataCenter":9,"id":0,"ip":"192.168.1.5","permission":"FULL","port":50088,"retryType":"DB","syncMode":"SYNCHRONOUS"}]
     > broker get
     > ctrl + ]
