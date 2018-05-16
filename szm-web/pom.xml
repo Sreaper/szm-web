@@ -216,6 +216,27 @@
             <artifactId>fastjson</artifactId>
             <version>1.1.23</version>
         </dependency>
+		<dependency>
+			<groupId>com.jd.middleware</groupId>
+			<artifactId>registry-zookeeper</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.0.24.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>user_cms</finalName>
@@ -228,7 +249,15 @@
 				<!--<target>1.6</target>-->
 			<!--</configuration>-->
 		<!--</plugin>-->
-	</plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
     <profiles>
         <profile>

@@ -5,7 +5,14 @@
     <title></title>
     <script>
         //alert(/^[^*$#%\\<>^&+={}\[\]\<\>\(\)]+$/g.test("dfsdfsdf%"));
-        alert(/^[a-zA-Z][.a-z0-9A-Z_-]*$/.test("a.s"));
+        //alert(/^[a-zA-Z][.a-z0-9A-Z_-]*$/.test("a.s"));
+        var re = null,i;
+        for (i=0;i<10;i++) {
+            re = /cat/g;
+            if (re.test("catsssdfdfs")) {
+                console.log("do")
+            }
+        }
     </script>
 </head>
 <body>

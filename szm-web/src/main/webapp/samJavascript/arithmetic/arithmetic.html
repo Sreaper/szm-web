@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arithmetic </title>
+    <script>
+        // 冒泡排序
+        function bubbleSort(arr, prop) {
+            var len = arr.length;
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - 1 - i; j++) {
+                    if (prop == undefined) {
+                        if (arr[j] > arr[j + 1]) {        //相邻元素两两对比
+                            var temp = arr[j + 1];        //元素交换
+                            arr[j + 1] = arr[j];
+                            arr[j] = temp;
+                        }
+                    } else {
+                        if (arr[j][prop] > arr[j + 1][prop]) {
+                            var temp = arr[j + 1];
+                            arr[j + 1] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }
+            return arr;
+        }
+
+        // 选择
+        function selectionSort(arr, prop) {
+            var len = arr.length;
+            var minIndex, temp;
+            for (var i = 0; i < len - 1; i++) {
+                minIndex = i;
+                for (var j = i + 1; j < len; j++) {
+                    if (prop == undefined) {
+                        if (arr[j] < arr[minIndex]) {     //寻找最小的数
+                            minIndex = j;                 //将最小数的索引保存
+                        }
+                    } else {
+                        if (arr[j][prop] < arr[minIndex][prop]) {     //寻找最小的数
+                            minIndex = j;                 //将最小数的索引保存
+                        }
+                    }
+                }
+                temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
+            }
+            return arr;
+        }
+
+        // 二分查找法
+        function binarySearch(arr, value) {
+            var start = 0;
+            var count = arr.length;
+            while (count > 0) {
+                var half = parseInt(count / 2);
+                var check = start + half;
+                if (arr[check] == value) {
+                    return check;
+                } else if (arr[check] < value) {
+                    count = count - half + 1;
+                    start = check;
+                } else if (arr[check] > value) {
+                    count = half;
+                }
+            }
+            return -1;
+        }
+        var attr = [];
+        attr.push(1);
+        attr.push(2);
+        attr.push(3);
+        attr.push(4);
+        attr.push(5);
+        attr.push(6);
+        var index = binarySearch(attr, 6);
+        console.log("related  index", index)
+
+        //        attr.push({"time": 100});
+        //        attr.push({"time": 100});
+        //        attr.push({"time": 100});
+        //        attr.push({"time": 100});
+        //        attr.push({"time": 20});
+        //        attr.push({"time": 30});
+        //        attr.push({"time": 14});
+        //        attr.push({"time": 2});
+        //        attr.push({"time": 200});
+        //attr = bubbleSort(attr, "time");
+        //        console.log(attr);
+        //        attr.sort(function (x,y) {
+        //            return y.time - x.time;
+        //        });
+        //        console.log(attr)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
