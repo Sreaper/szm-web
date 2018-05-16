@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Person (name ,age) {
+            var o = new Object();
+            o.name = name ;
+            o.age = age;
+            o.getName = function () {
+                console.log(this.name);
+            }
+            return o;
+        }
+        var o = new Person("szm",22);
+        o.getName();
+
+        var o = Person("szm",22);
+        o.getName();
+
+        function SpecialArray() {
+            var array = new Array();
+            array.push.apply(array, arguments);
+            array.toPipedString = function () {
+                return this.join("|");
+            }
+            return array;
+        }
+        var array = SpecialArray("name","szm");
+        console.log(array.toPipedString());
+
+        function Person1(name, age) {
+            var o = new Object();
+            o.sayName = function () {
+                console.log(name);
+            }
+            return o ;
+        }
+        var person1 = Person1("lyl", 22);
+        var person2 = new Person1("lyl1", 23);
+        person1.sayName();
+        person2.sayName();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
