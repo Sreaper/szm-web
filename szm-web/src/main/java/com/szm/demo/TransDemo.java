@@ -1,10 +1,5 @@
 package com.szm.demo;
 
-import junit.framework.TestCase;
-import org.apache.zookeeper.ClientWatchManager;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
-import org.junit.Test;
 
 import java.io.DataInputStream;
 import java.io.File;

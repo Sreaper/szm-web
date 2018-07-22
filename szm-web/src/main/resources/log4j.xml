@@ -5,10 +5,11 @@
 
     <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c:%F:%L - %m \n"/>
+            <!--<param name="ConversionPattern" value="[%d{HH\:mm\:ss}][%p](%c\:%F:%L)- %m%n "/>-->
         </layout>
         <filter class="org.apache.log4j.varia.LevelRangeFilter">
-            <param name="LevelMin" value="INFO"/>
+            <param name="LevelMin" value="DEBUG"/>
             <!--<param name="LevelMax" value="FATAL "/>-->
         </filter>
     </appender>
