@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>descriptor</title>
+	<script>
+		var o = {};
+		Object.defineProperty(o, 'a', {
+			get: function() { return 1; },
+			configurable: true
+		});
+
+		Object.defineProperty(o, 'a', { configurable: true }); // throws a TypeError
+		Object.defineProperty(o, 'a', { enumerable: true }); // throws a TypeError
+		Object.defineProperty(o, 'a', { set: function() {} }); // throws a TypeError (set was undefined previously)
+		Object.defineProperty(o, 'a', { get: function() { return 1; } }); // throws a TypeError (even though the new get does exactly the same thing)
+		Object.defineProperty(o, 'a', { value: 12 }); // throws a TypeError
+
+		d = Object.getOwnPropertyDescriptor(o, 'a');
+		console.log(o.a); // logs 1
+		delete o.a; // Nothing happens
+		console.log(o.a); // logs 1
+		var iFlag =1 ;
+		console.log(iFlag = iFlag << 1)
+		console.log(iFlag = iFlag << 1)
+		debugger;
+	</script>
+</head>
+<body>
+
+</body>
+</html>

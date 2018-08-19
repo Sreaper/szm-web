@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Radio group selectedIndex example</title>
+	<script type="text/javascript">
+		Object.defineProperty(NodeList.prototype, 'selectedIndex', {
+			get: function() {
+				var nIndex = this.length - 1;
+				while (nIndex > -1 && !this[nIndex].checked) {
+					nIndex--;
+				}
+				return nIndex;
+			},
+
+			set: function(nNewIndex) {
+				if (isNaN(nNewIndex)) {
+					return;
+				}
+				var nOldIndex = this.selectedIndex;
+				if (nOldIndex > -1) {
+					this[nOldIndex].checked = false;
+				}
+				if (nNewIndex > -1) {
+					this[nNewIndex].checked = true;
+				}
+			},
+
+			enumerable: true,
+			configurable: false
+		});
+
+		// try it!
+		function checkForm() {
+			var nSelectedIndex = document.myForm.myRadioGroup.selectedIndex;
+			if (nSelectedIndex < 0) {
+				alert('Select a gadget!!');
+				return false;
+			}
+			alert('Congratulations!! You selected the ' + document.myForm.myRadioGroup[nSelectedIndex].value + '.');
+			return true;
+		}
+	</script>
+</head>
+
+<body>
+<form name="myForm" onsubmit="return(checkForm());">
+	<fieldset><legend>Select a gadget</legend>
+		<p><input type="radio" name="myRadioGroup" id="ourShirt" value="shirt" /> <label for="ourShirt">shirt</label><br />
+			<input type="radio" name="myRadioGroup" id="ourPants" value="pants" /> <label for="ourPants">pants</label><br />
+			<input type="radio" name="myRadioGroup" id="ourBelt" value="belt" /> <label for="ourBelt">belt</label><br />
+			<input type="radio" name="myRadioGroup" id="ourShoes" value="shoes" /> <label for="ourShoes">shoes</label></p>
+		<p><span style="cursor:pointer;text-decoration:underline;color:#0000ff;" onclick="document.myForm.myRadioGroup.selectedIndex=2;">Select our favorite gadget ;-)</span></p>
+		<p><input type="submit" value="Order!" />
+	</fieldset>
+</form>
+</body>
+</html>

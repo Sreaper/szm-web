@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>testPrototype</title>
+	<script >
+		function Person(name,age,job) {
+			this.name = name;
+			this.age = age;
+			this.job = job;
+		}
+		Person("szm",30,"enginner");
+		Person.prototype.name = "szm";
+
+		var person = new Person("lyl",30,"teacher");
+		var o = { };
+		Object.defineProperty(o,"name",{value:"1"});
+		Object.defineProperty(o,"name1",{get:function(){
+			return 2;
+		}});
+		d = Object.getOwnPropertyDescriptor(o, 'name');
+		d = Object.getOwnPropertyDescriptor(o, 'name1');
+		o.name1 = 3;
+		console.log(o.name1);
+		debugger;
+	</script>
+</head>
+<body>
+
+</body>
+</html>
