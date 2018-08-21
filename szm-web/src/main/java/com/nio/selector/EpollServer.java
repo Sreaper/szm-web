@@ -39,7 +39,7 @@ public class EpollServer {
 						// 声明这个channel只对读操作感兴趣。
 						SocketChannel socketChannel = ssc.accept();
 						socketChannel.configureBlocking(false);
-						socketChannel.register(selector, SelectionKey.OP_READ);
+						socketChannel.register(selector, SelectionKey.OP_READ |SelectionKey.OP_WRITE);
 					}
 					else if (key.isReadable()) {
 						SocketChannel socketChannel = (SocketChannel) key.channel();
@@ -48,13 +48,13 @@ public class EpollServer {
 
 						readBuff.flip();
 						System.out.println("received : " + new String(readBuff.array()));
-						key.interestOps(SelectionKey.OP_WRITE);
+//						key.interestOps(SelectionKey.OP_READ |SelectionKey.OP_WRITE);
 					}
 					else if (key.isWritable()) {
 						writeBuff.rewind();
 						SocketChannel socketChannel = (SocketChannel) key.channel();
 						socketChannel.write(writeBuff);
-						key.interestOps(SelectionKey.OP_READ);
+						//key.interestOps(SelectionKey.OP_READ);
 					}
 				}
 			}
